@@ -153,6 +153,65 @@ namespace ControlStructureDemo
                 Console.Write("Enter your name: ");
             }
 
+            // === Controlling loop execution ===
+
+            // Break allows us to end a loop early
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(i);
+
+                if (i == 5)
+                {
+                    break;
+                }
+            }
+            Console.WriteLine();
+
+            // Continue keyword allows us to "skip"
+            // part of an iteration
+            // - Jumps back to the "top" of the loop
+            //   and continues with the NEXT iteration
+            for (int i = 10; i < 20; i++)
+            {
+                if (i == 15)
+                {
+                    continue;
+                }
+
+                Console.WriteLine(i);
+            }
+
+
+            // === Best Practices ===
+
+            string state = "NY";
+            int age = 14;
+
+            if (state == "NY" && age >= 16)
+            {
+                // NO!  Don't do this!
+                // NO NO NO NO NO 
+            }
+            else
+            {
+                Console.WriteLine("Not old enough");
+            }
+
+            // Be explicit about your loop ending conditions
+            // - Put them in the loop definition
+            string input = "";
+            while (input != "quit")
+            {
+                Console.Write("Enter your command: ");
+                input = Console.ReadLine()!;
+
+                // Process input here
+                if (input == "talk") { }
+                else if (input == "move") { }
+                else if (input == "attack") { }
+
+            }
+
         }
 
         static bool PrintAndReturnFalse()
